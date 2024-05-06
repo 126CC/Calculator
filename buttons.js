@@ -18,15 +18,39 @@ function enterNum() {
 }
 
 function history() {
-        // localStorage.setItem("equation", displayNum);
-        // JSON.stringify(eval(displayNum));
-        // localStorage.setItem("solution", eval(displayNum));
-    let history =
+
+    let history = [
         {
-            equation: displayNum,
+            type: "equation",
+            equation: displayNum
+        },
+        {
+            type: "solution",
             solution: eval(displayNum)
         }
-        
+        ]
+    let eqNum = localStorage.getItem("eqNum");
+    let solNum = localStorage.getItem("solNum");
+
+    if(eqNum == null) {
+        eqNum = 0;
+    }
+
+    if(solNum == null) {
+        solNum = 0;
+    }
+
+    if(history.type === "equation") {
+        eqNum++;
+        localStorage.setItem(eqNum, JSON.stringify(history[0]));
+    }
+    if(history.type === "solution") {
+        solNum++;
+        JSON.stringify(eval(displayNum));
+        localStorage.setItem(solNum, eval(displayNum));
+    }
+
+    
     }
 
 
