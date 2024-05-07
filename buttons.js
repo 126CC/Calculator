@@ -14,43 +14,73 @@ function deleteNum() {
 }
 
 function enterNum() {
+
+
+        let eq = displayNum;
+        let sol = eval(displayNum)
+    let history = [
+        {
+            equation: eq,
+            solution: sol
+        }
+    ]
+
+        let counter = localStorage.getItem("counter");
+        if(counter == null) {
+            counter = 0;
+        }
+        counter++;
+        localStorage.setItem(counter, JSON.stringify(history[0]));
+
+        history.push();
     document.getElementById("display").innerHTML = eval(displayNum);
+
 }
 
 function history() {
 
-    let history = [
-        {
-            type: "equation",
-            equation: displayNum
-        },
-        {
-            type: "solution",
-            solution: eval(displayNum)
-        }
-        ]
-    let eqNum = localStorage.getItem("eqNum");
-    let solNum = localStorage.getItem("solNum");
 
-    if(eqNum == null) {
-        eqNum = 0;
-    }
 
-    if(solNum == null) {
-        solNum = 0;
-    }
 
-    if(history.type === "equation") {
-        eqNum++;
-        localStorage.setItem(eqNum, JSON.stringify(history[0]));
-    }
-    if(history.type === "solution") {
-        solNum++;
-        JSON.stringify(eval(displayNum));
-        localStorage.setItem(solNum, eval(displayNum));
-    }
 
-    
+
+    // let eqNum = localStorage.getItem("eqNum");
+    // let solNum = localStorage.getItem("solNum");
+    //
+    // if(eqNum == null) {
+    //     eqNum = 0;
+    // }
+    //
+    // if(solNum == null) {
+    //     solNum = 0;
+    // }
+    //
+    // if(history.type === "equation") {
+    //     eqNum++;
+    //     localStorage.setItem(eqNum, JSON.stringify(history[0]));
+    // }
+    //
+    // if(history.type === "solution") {
+    //     solNum++;
+    //     JSON.stringify(eval(displayNum));
+    //     localStorage.setItem(solNum, JSON.stringify(history[1]));
+    // }
+
+
+
+    // let counter = localStorage.getItem("counter");
+    // if(counter == null) {
+    //     counter = 0;
+    // }
+    //
+    // counter++;
+    // localStorage.setItem(counter, history[0]);
+    // localStorage.setItem(counter, history[1]);
+    // localStorage.setitem("counter", counter);
+
+
+
+
     }
 
 
