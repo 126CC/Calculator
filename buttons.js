@@ -13,79 +13,43 @@ function deleteNum() {
     document.getElementById("display").innerHTML = displayNum;
 }
 
+let counter = localStorage.getItem("counter");
+if(counter == null) {
+    counter = 0;
+}
+
+
 function enterNum() {
 
+    let eq = displayNum;
 
-        let eq = displayNum;
-        let sol = eval(displayNum)
-    let history = [
-        {
-            equation: eq,
-            solution: sol
-        }
-    ]
 
-        let counter = localStorage.getItem("counter");
-        if(counter == null) {
-            counter = 0;
-        }
         counter++;
-        localStorage.setItem(counter, JSON.stringify(history[0]));
+        localStorage.setItem(counter, JSON.stringify(eq));
+        localStorage.setItem("counter", counter);
 
-        history.push();
     document.getElementById("display").innerHTML = eval(displayNum);
 
 }
 
 function history() {
 
-
-
-
-
-
-    // let eqNum = localStorage.getItem("eqNum");
-    // let solNum = localStorage.getItem("solNum");
-    //
-    // if(eqNum == null) {
-    //     eqNum = 0;
-    // }
-    //
-    // if(solNum == null) {
-    //     solNum = 0;
-    // }
-    //
-    // if(history.type === "equation") {
-    //     eqNum++;
-    //     localStorage.setItem(eqNum, JSON.stringify(history[0]));
-    // }
-    //
-    // if(history.type === "solution") {
-    //     solNum++;
-    //     JSON.stringify(eval(displayNum));
-    //     localStorage.setItem(solNum, JSON.stringify(history[1]));
-    // }
-
-
-
-    // let counter = localStorage.getItem("counter");
-    // if(counter == null) {
-    //     counter = 0;
-    // }
-    //
-    // counter++;
-    // localStorage.setItem(counter, history[0]);
-    // localStorage.setItem(counter, history[1]);
-    // localStorage.setitem("counter", counter);
-
-
-
-
-    }
-
+    let eq = [];
+        for(let i = 0; i <= counter; i++) {
+            eq.push(localStorage.getItem(""));
+            }
+            document.getElementById("display").innerHTML = eq;
+        }
 
 function clearNum() {
         displayNum = "";
     document.getElementById("display").innerHTML = displayNum;
 }
 
+function upEq() {
+
+}
+
+function downEq() {
+
+}

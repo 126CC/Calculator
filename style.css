@@ -2,6 +2,13 @@
     grid-area: myArea;
 }
 
+.item2 {
+    text-align: center;
+    width: 435px;
+    position: relative;
+    left: 5px;
+}
+
 .grid-container {
     margin-top: 50px;
     display: grid;
