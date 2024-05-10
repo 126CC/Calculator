@@ -1,5 +1,12 @@
+#body {
+    background-color: #9D9171;
+    color: lavenderblush;
+}
+
+
 .item1 {
     grid-area: myArea;
+    border: #B07156 solid 5px;
 }
 
 .item2 {
@@ -14,14 +21,15 @@
     display: grid;
     grid-template-areas: 'myArea myArea myArea myArea myArea';
     gap: 10px;
-    background-color: pink;
+    background-color: #533745;
     padding: 10px;
     border-radius: 25px;
+    width: 100px;
 
 }
 
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #AB4E68;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
