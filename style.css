@@ -7,13 +7,12 @@
 .item1 {
     grid-area: myArea;
     border: #B07156 solid 5px;
+    overflow-x: auto;
 }
 
 .item2 {
     text-align: center;
     width: 435px;
-    position: relative;
-    left: 5px;
 }
 
 .grid-container {
@@ -37,8 +36,5 @@
 }
 
 h1 {
-    background-color: darkslategray;
-    border: lavenderblush ridge;
     text-align: center;
-    color: lavender;
 }
